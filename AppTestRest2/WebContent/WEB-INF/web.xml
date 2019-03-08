@@ -37,4 +37,8 @@
 		<servlet-name>resteasy-servlet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
+	
+	<listener>
+	<listener-class>com.arun.startup.AppListner</listener-class>
+	</listener>
 </web-app>
