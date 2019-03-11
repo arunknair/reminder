@@ -610,6 +610,10 @@ var LoginService = /** @class */ (function () {
         this.http.post(url, JSON.stringify(msg), headers).subscribe(function (resp) {
             _this.log.debug('got result');
             _this.log.debug(resp);
+            var data = resp;
+            _this.log.debug('######################');
+            _this.log.debug(data.username);
+            _this.log.debug(data.password);
         });
     };
     LoginService = __decorate([
@@ -775,7 +779,7 @@ var RegisterUserModule = /** @class */ (function () {
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: false,
-    baseUrl: 'http://localhost:8080/AppTestRest2-0.1'
+    baseUrl: '/reminder'
 };
 
 
