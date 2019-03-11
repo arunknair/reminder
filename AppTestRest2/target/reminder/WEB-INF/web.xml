@@ -39,6 +39,6 @@
 	</servlet-mapping>
 	
 	<listener>
-	<listener-class>com.arun.startup.AppListner</listener-class>
+	<listener-class>com.arun.startup.AppListener</listener-class>
 	</listener>
 </web-app>

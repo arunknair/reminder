@@ -23,6 +23,10 @@ export class LoginService {
     this.http.post(url, JSON.stringify(msg), headers).subscribe(resp => {
       this.log.debug('got result');
       this.log.debug(resp);
+      const data = <LoginModel>resp;
+      this.log.debug('######################');
+      this.log.debug(data.username);
+      this.log.debug(data.password);
     });
   }
 }
