@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.reminder.model.User;
+import com.reminder.model.Student;
 import com.reminder.service.JPAService;
 
 @RestController
@@ -18,13 +18,13 @@ public class JPAController {
 	private JPAService jpaService;
 	
 	@GetMapping("/getAll")
-	public List<User> getAllUsers() {
+	public List<Student> getAllUsers() {
 		return jpaService.getAllUsers();
 	}
 	
 	@GetMapping("/insert")
 	public void insertUser() {
-		User user = new User();
+		Student user = new Student();
 		user.setEmail("arunk@sss.com");
 		user.setPhoneNumber("4545454545");
 		user.setStudentName("Arun");

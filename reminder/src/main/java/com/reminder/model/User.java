@@ -1,53 +1,35 @@
 package com.reminder.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name="student_tbl")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="student_id")
-	private long studentId;
-	@Column(name="email")
-	private String email;
-	@Column(name="phone_number")
-	private String phoneNumber;
-	@Column(name="student_name")
-	private String studentName;
-	
-	public long getStudentId() {
-		return studentId;
+	private long userId;
+	private String username;
+	private String password;
+	public long getUserId() {
+		return userId;
 	}
-	public void setStudentId(long studentId) {
-		this.studentId = studentId;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getPassword() {
+		return password;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	public String getStudentName() {
-		return studentName;
-	}
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

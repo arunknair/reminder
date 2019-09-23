@@ -29,4 +29,18 @@ export class LoginService {
       this.log.debug(data.password);
     });
   }
+
+  getUsers() {
+    const url = 'http://localhost:9090/users';
+    this.log.debug('URL : ' + url);
+    const headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    this.http.get(url).subscribe(resp => {
+      this.log.debug('got result');
+      this.log.debug(resp);
+    });
+  }
 }

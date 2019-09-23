@@ -2,10 +2,10 @@ package com.reminder.service;
 
 import java.util.List;
 
-import com.reminder.model.User;
+import com.reminder.model.Student;
 
 public interface JPAService {
 
-	public List<User> getAllUsers();
-	public void insertUser(User user);
+	public List<Student> getAllUsers();
+	public void insertUser(Student user);
 }
