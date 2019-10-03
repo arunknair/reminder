@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {LoginModel} from '../models/LoginModel';
 import {environment} from '../../environments/environment';
 import {NGXLogger} from 'ngx-logger';
@@ -31,7 +31,7 @@ export class LoginService {
   }
 
   getUsers() {
-    const url = 'http://localhost:9090/users';
+    const url = 'http://localhost:8080/getAll';
     this.log.debug('URL : ' + url);
     const headers = {
       headers: new HttpHeaders({
@@ -39,6 +39,19 @@ export class LoginService {
       })
     };
     this.http.get(url).subscribe(resp => {
+      this.log.debug('got result');
+      this.log.debug(resp);
+    });
+  }
+
+  springLoginUser(msg: LoginModel) {
+    const url = 'http://localhost:8080/login';
+    const headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    this.http.get(url, {params: new HttpParams({fromObject:{params: JSON.stringify(msg)}})}).subscribe(resp => {
       this.log.debug('got result');
       this.log.debug(resp);
     });

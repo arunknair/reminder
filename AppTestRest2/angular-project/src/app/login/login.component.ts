@@ -29,12 +29,11 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    this.log.debug(this.username.value)
-    this.log.debug(this.password.value);
-    const msg = new  LoginModel();
-    msg.username = this.username.value;
-    msg.password = this.password.value;
-    this.loginService.loginUser(msg);
+    this.log.debug(this.loginForm.value);
+    let msg = new  LoginModel();
+    msg = this.loginForm.value;
+    this.log.debug(msg);
+    this.loginService.springLoginUser(msg);
   }
 
   userList() {
